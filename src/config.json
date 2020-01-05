@@ -9,7 +9,7 @@
                 "NODE_ENV": "dev",
                 "DEBUG": "service-ecs",
                 "PORT": "3000",
-                "ROUTE_IP": "xxx"
+                "ROUTE_IP": "10.225.68.88"
             },
             "runtimeExecutable": "ts-node-dev",
             "runtimeArgs": [
