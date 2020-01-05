@@ -1,20 +1,20 @@
-# vconsole tools extension
+# launch tools extension
 
-the extension is a tool for starting vconsole project in development mode, and also you run debug nodejs process using the given configuration.
+the extension is a tool for starting project in development mode, and also you run debug nodejs process using the given configuration.
 
 ## Getting Started
 
-1.  click [here](https://marketplace.visualstudio.com/items?itemName=chenjian-bzh.vconsole) to install the extension, or you can find it in vscode extensions tab, just search for vconsole-bootstrap.
+1.  click [here](https://marketplace.visualstudio.com/items?itemName=chenjian-bzh.launch-tool) to install the extension, or you can find it in vscode extensions tab, just search for launch-tool.
 
-2.  make sure your current workspace or folder contains at least one vconsole project.
+2.  make sure your current workspace or folder contains at least one target project.
 
-3.  use shortcuts: "ctrl + shift + p" , and enter "vconsole", you will see three commands list below:
+3.  use shortcuts: "ctrl + shift + p" , and enter "launch", you will see three commands list below:
 
-    - `vconsole.dev`: start web and node development.
+    - `launch.dev`: start web and node development.
 
-    - `vconsole.debug`: start web process and node debug process for you, if thers is no launch.json, a new one will be created.
+    - `launch.debug`: start web process and node debug process for you, if thers is no launch.json, a new one will be created.
 
-    - `vconsole.createDebugConfiguration`: create a debug configuration named launch.json in .vscode directory. if launch.json is already exist, this command will do nothing. The new configuration will be like this:
+    - `launch.createDebugConfiguration`: create a debug configuration named launch.json in .vscode directory. if launch.json is already exist, this command will do nothing. The new configuration will be like this:
 
           ```json
           {
@@ -23,7 +23,7 @@ the extension is a tool for starting vconsole project in development mode, and a
                   {
                       "type": "node",
                       "request": "launch",
-                      "name": "vconsole debug",
+                      "name": "launch debug",
                       "env": {
                           "NODE_ENV": "dev",
                           "PORT": "3000",

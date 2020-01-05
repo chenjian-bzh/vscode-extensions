@@ -1,10 +1,10 @@
 {
-  "name": "vconsole",
-  "displayName": "vconsole-bootstrap",
-  "description": "vconsole bootstrap tool, you can start or debug web and node process using one command",
+  "name": "launch-tool",
+  "displayName": "launch-tool",
+  "description": "launch-tool, you can start or debug web and node process using one command",
   "version": "0.0.3",
   "publisher": "chenjian-bzh",
-  "icon": "images/vconsole.png",
+  "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.41.0"
   },
@@ -12,27 +12,27 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.vconsole.dev",
-    "onCommand:extension.vconsole.debug",
-    "onCommand:extension.vconsole.createDebugConfiguration"
+    "onCommand:extension.launch.dev",
+    "onCommand:extension.launch.debug",
+    "onCommand:extension.launch.createDebugConfiguration"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension.vconsole.dev",
+        "command": "extension.launch.dev",
         "title": "dev",
-        "category": "vconsole"
+        "category": "launch"
       },
       {
-        "command": "extension.vconsole.debug",
+        "command": "extension.launch.debug",
         "title": "debug",
-        "category": "vconsole"
+        "category": "launch"
       },
       {
-        "command": "extension.vconsole.createDebugConfiguration",
+        "command": "extension.launch.createDebugConfiguration",
         "title": "createDebugConfiguration",
-        "category": "vconsole"
+        "category": "launch"
       }
     ]
   },

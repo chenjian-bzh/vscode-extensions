@@ -7,7 +7,7 @@ const products = [
   'all',
   'ecs',
   'vod',
-  'rpc',
+  'rtc',
   'livesass',
   'iam',
   'live',
@@ -59,15 +59,15 @@ function getWorkSpace(): vscode.WorkspaceFolder {
 
   if (index === -1 || !vconsoleFolder) {
     throw new Error(
-      'no vconsole project in current workspace, please add at least one!'
+      'no console project in current workspace, please add at least one!'
     );
   }
-  //将vconsole移到workspace的第一位
+  //将console项目移到workspace的第一位
   if (index !== 0) {
     const backup = folders[0];
     vscode.workspace.onDidChangeWorkspaceFolders(e => {
       vscode.window.showInformationMessage(
-        'vconsole project location has been moved'
+        'console project location has been moved'
       );
     });
     vscode.workspace.updateWorkspaceFolders(0, 1, vconsoleFolder);
@@ -78,7 +78,7 @@ function getWorkSpace(): vscode.WorkspaceFolder {
 
 function initDebugConfig(wf: vscode.WorkspaceFolder): string {
   //检测是否存在.vscode/launch.json, 没有则新建
-  let missionName = 'vconsole debug';
+  let missionName = 'platform debug';
   let configPath = `${wf.uri.path}/.vscode/launch.json`;
 
   if (fs.existsSync(configPath)) {
@@ -94,7 +94,7 @@ function initDebugConfig(wf: vscode.WorkspaceFolder): string {
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
-    vscode.commands.registerCommand('extension.vconsole.dev', () => {
+    vscode.commands.registerCommand('extension.launch.dev', () => {
       vscode.window.showQuickPick(products).then(val => {
         const wf = getWorkSpace();
         const rootpath = wf.uri.path;
@@ -111,7 +111,7 @@ export function activate(context: vscode.ExtensionContext) {
       });
     }),
 
-    vscode.commands.registerCommand('extension.vconsole.debug', () => {
+    vscode.commands.registerCommand('extension.launch.debug', () => {
       vscode.window.showQuickPick(products).then(val => {
         const wf = getWorkSpace();
         const debugName = initDebugConfig(wf);
@@ -127,7 +127,7 @@ export function activate(context: vscode.ExtensionContext) {
     }),
 
     vscode.commands.registerCommand(
-      'extension.vconsole.createDebugConfiguration',
+      'extension.launch.createDebugConfiguration',
       () => {
         try {
           const wp = getWorkSpace();
@@ -144,7 +144,7 @@ export function activate(context: vscode.ExtensionContext) {
     ),
 
     vscode.commands.registerCommand(
-      'extension.vconsole.createTopInterface',
+      'extension.launch.createTopInterface',
       () => {
         vscode.window.showQuickPick(products).then(val => {
           //自动生成top接口文件
@@ -154,7 +154,7 @@ export function activate(context: vscode.ExtensionContext) {
     ),
 
     //git commit
-    vscode.commands.registerCommand('extension.vconsole.git_commit', () => {
+    vscode.commands.registerCommand('extension.launch.git_commit', () => {
       vscode.window.showInputBox().then(val => {
         const gitExtension = vscode.extensions.getExtension('vscode.git')
           ?.exports;
@@ -164,14 +164,14 @@ export function activate(context: vscode.ExtensionContext) {
       });
     }),
 
-    vscode.commands.registerCommand('extension.vconsole.kms', () => {
+    vscode.commands.registerCommand('extension.launch.kms', () => {
       vscode.window.showInputBox().then(val => {
         //kms加密解密
         vscode.window.showInformationMessage(`kms`);
       });
     }),
 
-    vscode.commands.registerCommand('extension.vconsole.charles', () => {
+    vscode.commands.registerCommand('extension.launch.charles', () => {
       vscode.window.showInputBox().then(val => {
         //charles代理
         vscode.window.showInformationMessage(`charles代理`);

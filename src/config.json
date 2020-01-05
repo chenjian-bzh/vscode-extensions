@@ -4,7 +4,7 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "vconsole debug",
+      "name": "platform debug",
       "env": {
         "NODE_ENV": "dev",
         "PORT": "3000",
