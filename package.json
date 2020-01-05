@@ -2,7 +2,7 @@
   "name": "vconsole",
   "displayName": "vconsole-bootstrap",
   "description": "vconsole bootstrap tool, you can start or debug web and node process using one command",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "chenjian-bzh",
   "icon": "images/vconsole.png",
   "engines": {
