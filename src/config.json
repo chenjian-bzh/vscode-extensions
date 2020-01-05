@@ -1,28 +1,22 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "vconsole debug",
-            "env": {
-                "NODE_ENV": "dev",
-                "DEBUG": "service-ecs",
-                "PORT": "3000",
-                "ROUTE_IP": "10.225.68.88"
-            },
-            "runtimeExecutable": "ts-node-dev",
-            "runtimeArgs": [
-                "--ignore-watch",
-                "typings/auto-generated"
-            ],
-            "args": [
-                "bootstrap.ts"
-            ],
-            "cwd": "${workspaceRoot}/packages/platform",
-            "restart": true,
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "vconsole debug",
+      "env": {
+        "NODE_ENV": "dev",
+        "PORT": "3000",
+        "ROUTE_IP": "10.225.68.88"
+      },
+      "runtimeExecutable": "ts-node-dev",
+      "runtimeArgs": ["--ignore-watch", "typings/auto-generated"],
+      "args": ["bootstrap.ts"],
+      "cwd": "${workspaceRoot}/packages/platform",
+      "restart": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
 }
